@@ -78,7 +78,8 @@ BUG-DECK-01
 - Reproduction video: 2026-10-02에 `57a3cb6` 버전을 다시 실행하여 버그 재현 영상 확보
 - Git History: 수정 전 버전과 수정 커밋 비교
 
-> 영상 파일은 별도로 `Evidence/Shop-Deck-Bug/`에 추가 예정입니다.
+- Before: `Images/videos/Before/01-shop-deck-bug.mp4`
+- After: `Images/videos/After/01-shop-deck-after.mp4`
 
 ## Related History
 

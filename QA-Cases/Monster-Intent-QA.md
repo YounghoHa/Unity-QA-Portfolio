@@ -39,3 +39,14 @@ MonsterData
 ## QA Value
 
 문제를 단순히 "아이콘이 틀림"으로 기록하지 않고, 데이터 흐름을 분리해 실제 오류 발생 지점을 찾는 방식으로 검증했습니다.
+
+
+## Evidence
+
+### Monster Skill / Defense
+- Before: `Images/videos/Before/02-monster-skill-defense-mismatch.mp4`
+- After: `Images/videos/After/02-monster-skill-defense-after.mp4`
+
+### Cloud Slime
+- Before: `Images/videos/Before/03-cloud-slime-intent-skill-bug.mp4`
+- After: `Images/videos/After/03-cloud-slime-intent-skill-after.mp4`
