@@ -4,17 +4,20 @@
 
 ---
 
-## BUG-DECK-01 — 상점 구매 후 덱 최대 수량 초과
+## BUG-DECK-01 — 상점 구매 카드 덱 편성 수량 미반영
 
 - Priority: High
 - Status: FAIL → PASS
-- Preconditions: 덱 8장, 구매 가능한 골드 보유
-- Expected: 최대 8장 유지
-- Actual: 구매 후 9장 보유
-- Impact: 덱 규칙 위반 및 이후 Draw / 전투 밸런스 영향
-- Retest: 수정 후 동일 조건 재검증
+- Reproduction Version: `57a3cb6` (2026-04-14)
+- Fix Commit: `6e31c27` (2026-04-19)
+- Preconditions: 상점에서 신규 카드를 구매한 뒤 덱 편성 화면 진입
+- Expected: 구매 카드가 보유 데이터에 등록되고 프로젝트 규칙에 맞는 수량으로 덱 편성 가능
+- Actual: 구매 카드는 보유 목록에 나타나지만 신규 카드의 보유 / 선택 수량 데이터가 기존 카드와 다르게 초기화되어 덱 구성 수량이 정상 반영되지 않음
+- Cause: 신규 카드 생성 시 `m_number = 1`, `m_selectNumber = 0`으로 저장되고, 선택 시 편성 수량을 보정하지 않던 로직
+- Fix: 신규 카드 수량 초기화 및 `AddSelectCard()`의 선택 수량 보정 로직 추가
+- Evidence: `57a3cb6` 버전에서 재현 영상 확보 + 수정 Commit 비교
 
-상세: [Shop Deck Limit Bug](../QA-Cases/Shop-Deck-Bug.md)
+상세: [Shop Purchase / Deck Composition Bug](../QA-Cases/Shop-Deck-Bug.md)
 
 ---
 
