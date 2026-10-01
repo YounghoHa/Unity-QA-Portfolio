@@ -69,6 +69,20 @@ HEXIT 개발 과정에서 실제로 구현·수정·검증한 기능을 기준�
 | TC-61 | QA Tool | Attack Buff Button | 전투 중 Button 클릭 | 지정 Buff 적용 | 정상 사용 | PASS |
 | TC-62 | QA Tool | 동일 상태 반복 재현 | 동일 테스트 반복 | 같은 조건 빠르게 생성 | BattleTestButton 활용 | PASS |
 
+| TC-63 | Monster UI | 몬스터 패턴 UI 검증 | 몬스터 패턴별 UI 표시 | 행동 패턴에 맞는 UI 표시 | 구현 중 "이상한 오류" 발생, 미완성 기록 | FAIL |
+| TC-64 | Battle Code | GameSet 코드 충돌 검증 | 카드 조합 / 이동 / 공격 / 체력 기능 통합 | 관련 기능이 충돌 없이 실행 | 일부 코드 오류 및 코드 겹침으로 임시 주석 처리 | FAIL / 확인 필요 |
+| TC-65 | Battle Structure | 턴 / 몬스터 공격 구조 검증 | 턴 진행 중 몬스터 공격 실행 | 기존 구조에서 안정적으로 행동 처리 | 몬스터 스크립트 재구성 필요 판단 | 구조 개선 필요 |
+| TC-66 | Card UI | Drag 시작 위치 검증 | 손패 카드 Drag 시작 | 카드가 자연스럽게 Pointer를 따라 이동 | Drag 시작 시 순간이동 현상 발생 | FAIL → PASS |
+| TC-67 | Card VFX | 카드 소멸 이펙트 검증 | 카드 사용 후 소멸 처리 | 지정된 소멸 연출 정상 재생 | 카드 사라지는 이펙트 수정 중 기록 | 확인 필요 |
+| TC-68 | Monster | 몬스터 Sprite 표시 | 몬스터 Spawn / 상태 변경 | 올바른 Sprite 표시 | 몬스터 Sprite 오류 발생 | FAIL → PASS |
+| TC-69 | Monster | Cloud Slime 동작 검증 | Cloud Slime 전투 진행 | 기획된 패턴대로 정상 동작 | 특정 버그 발생 후 수정 기록, 상세 증상은 Git 메시지로 확인 불가 | FAIL → PASS |
+| TC-70 | Monster UI | 몬스터 Skill / Defense 위치 | Skill / Defense UI 표시 | 지정 위치에 UI 표시 | 표시 위치 문제 수정 | FAIL → PASS |
+| TC-71 | Card UI | 카드 Hover 동작 | 카드에 Pointer 진입 / 이탈 | Hover 상태가 정상 적용·해제 | 카드 Hover 문제 발생 후 수정 완료 | FAIL → PASS |
+| TC-72 | UI | Checkmark 표시 | Checkmark 표시 조건 충족 | 상태에 맞게 Checkmark 표시 | 수정 시도 실패 기록 | FAIL |
+| TC-73 | Monster UI | 몬스터 Icon 표시 | 몬스터 상태 / 행동 UI 표시 | 올바른 Icon 표시 | 몬스터 Icon 오류 발생 후 수정 | FAIL → PASS |
+| TC-74 | Scene UX | 씬 간 UI / 연출 일관성 | Story / Heal / Random Event 씬 이동 | 공통 UI와 연출이 일관되게 표시 | 씬 간 통일되지 않은 부분 확인 후 수정 | UX FAIL → PASS |
+| TC-75 | Stat UI | Sidebar 클릭 설명 표시 | Stat Sidebar 항목 클릭 | 선택 항목의 설명 표시 | Sidebar 클릭 시 설명 미표시 상태를 수정 | FAIL → PASS |
+
 ## Next
 
 각 테스트 케이스 중 포트폴리오에서 강조할 항목은 별도의 QA Case 또는 Bug Report 문서로 상세화합니다.
