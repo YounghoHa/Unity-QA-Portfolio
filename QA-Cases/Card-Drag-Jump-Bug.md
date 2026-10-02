@@ -10,7 +10,7 @@ BUG-CARD-01
 
 ## Priority
 
-**High**
+**Medium**
 
 ## Status
 
