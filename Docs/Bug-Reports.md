@@ -52,14 +52,18 @@
 
 ---
 
-## BUG-MONSTER-01 — 몬스터 사망 후 추가 체력 감소
+## BUG-MONSTER-01 — 몬스터 처치 후 디버프 공격이 다음 스테이지에서 발동
 
 - Priority: High
 - Status: FAIL → PASS
-- Condition: 몬스터 HP가 0이 된 뒤 추가 데미지 발생
-- Expected: 사망 처리 이후 추가 HP 감소 없음
-- Actual: 사망 후에도 체력 감소 처리
-- Action: 사망 상태에서 추가 데미지 처리되지 않도록 수정
+- Condition: 플레이어에게 지속 공격 / 디버프 효과를 부여하는 몬스터를 처치한 뒤 다음 스테이지로 이동
+- Expected: 몬스터가 사망하면 해당 몬스터가 남긴 공격성 디버프 / 지속 효과가 종료되어 다음 스테이지에서 플레이어에게 데미지를 주지 않아야 함
+- Actual: 몬스터를 처치했음에도 해당 몬스터의 능력이 남아 다음 스테이지에서 발동하고 플레이어에게 데미지가 들어오는 현상 발생
+- Cause: 몬스터 사망 처리 이후 전투 중 적용된 디버프 상태가 정리되지 않고 다음 전투 상태까지 유지됨
+- Fix: 몬스터 사망 처리 시 관련 디버프를 정리하도록 수정
+- Retest: 몬스터 처치 → 다음 스테이지 이동 후 동일 디버프 데미지가 발생하지 않는지 재확인
+
+상세: [Monster Debuff After Death Bug](../QA-Cases/Monster-Debuff-Death-Bug.md)
 
 관련 기록:
 - 2026-04-17 몬스터 아이콘 및 죽어도 체력깎이는 오류 해결
@@ -85,7 +89,7 @@
 - Retest: 수정 후 Stage에서 Effect / UI / Tutorial이 동시에 표시되는 상황의 렌더 순서 확인 필요
 
 관련 기록:
-- [HEXIT Commit `808351f` — 스테이지 이펙트 앞으로나오는 버그](https://github.com/YounghoHa/Hexit/commit/808351f8f1598be9c7b2a4ad8cb59fbd28dc83b4)
+- `808351f` — 스테이지 이펙트 앞으로나오는 버그
 
 ---
 
@@ -106,5 +110,5 @@
 - Retest: 수정 후 카드 Drag 시작 위치, Pointer 추적, 원위치 복귀 Animation 확인
 
 관련 기록:
-- [HEXIT Commit `b56c4fb` — 카드 애니메이션 드래그 순간이동 수정](https://github.com/YounghoHa/Hexit/commit/b56c4fb5453885c390162d8c959fdb6c5a62827f)
+- `b56c4fb` — 카드 애니메이션 드래그 순간이동 수정
 
