@@ -72,7 +72,7 @@
 
 ## BUG-VFX-01 — 스테이지 이펙트 Sorting 오류
 
-- Priority: Medium
+- Priority: Low
 - Status: FAIL → 수정 반영
 - Condition: Stage에서 Effect / UI / Tutorial 요소가 동시에 표시되는 상황
 - Expected: Background / Monster / Card / UI / Effect / Minimap / Tutorial이 프로젝트에서 정의한 렌더 순서에 맞게 표시
@@ -90,7 +90,7 @@
 
 ## BUG-CARD-01 — 카드 Drag 시작 시 순간이동
 
-- Priority: High
+- Priority: Medium
 - Status: FAIL → PASS
 - Condition: 손패의 카드를 마우스로 Drag 시작
 - Expected: 카드를 잡은 현재 위치에서 자연스럽게 Pointer를 따라 이동
