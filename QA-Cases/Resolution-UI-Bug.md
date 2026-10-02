@@ -90,5 +90,5 @@ BUG-UI-01
 - Video Index: [BUG-UI-01 해상도 설정 FAIL 영상 확인](../Images/videos/README.md#bug-ui-01--해상도-변경-시-ui-레이아웃-깨짐)
 - Direct Video: [해상도 설정 FAIL 영상 보기](https://github.com/user-attachments/assets/30602093-631b-4fdb-905a-ed178d6d7c94)
 - Git History:
-  - [`6a3d275` — 게임씬 해상도 수정](https://github.com/YounghoHa/Hexit/commit/6a3d27585c3be1b5a348ac23bc6dd2a87a3a143f)
-  - [`0bb2102` — 옵션창, 해상도 조절 깨지는 문제 해결](https://github.com/YounghoHa/Hexit/commit/0bb21024e2b379e4827fb9a6a422dd63ccb44200)
+  - `6a3d275` — 게임씬 해상도 수정
+  - `0bb2102` — 옵션창, 해상도 조절 깨지는 문제 해결
