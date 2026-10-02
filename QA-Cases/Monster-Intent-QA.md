@@ -44,9 +44,9 @@ MonsterData
 ## Evidence
 
 ### Monster Skill / Defense
-- Before: `Images/videos/Before/02-monster-skill-defense-mismatch.mp4`
-- After: `Images/videos/After/02-monster-skill-defense-after.mp4`
+- Before: [버그 재현 영상 보기](.../Images/videos/Before/02-cloud-skill-defense-mismatch.mp4.mp4)
+- After: [수정 후 영상 보기](.../Images/videos/After/02-cloud-skill-defense-after.mp4.mp4)
 
 ### Cloud Slime
-- Before: `Images/videos/Before/03-cloud-slime-intent-skill-bug.mp4`
-- After: `Images/videos/After/03-cloud-slime-intent-skill-after.mp4`
+- Before: [버그 재현 영상 보기](.../Images/videos/Before/03-slime-intent-skill-bug.mp4.mp4)
+- After: [수정 후 영상 보기](.../Images/videos/After/03-slime-intent-skill-after.mp4.mp4)
