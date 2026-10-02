@@ -60,3 +60,48 @@
 
 관련 기록:
 - 2026-04-17 몬스터 아이콘 및 죽어도 체력깎이는 오류 해결
+
+---
+
+## BUG-VFX-01 — 스테이지 이펙트 Sorting 오류
+
+- Priority: Medium
+- Status: FAIL → 수정 반영
+- HEXIT Commit: `808351f` (2026-07-20)
+- Commit Message: `스테이지 이펙트 앞으로나오는 버그`
+- Main Location:
+  - `Assets/GData/PreFabs/Effect/CandleFire.prefab`
+  - `Assets/Scenes/Stage.unity`
+  - `ProjectSettings/TagManager.asset`
+  - 관련 정렬 처리: `Assets/Scripts/UI/OptionSystemUI.cs`, `Assets/Scripts/hahyunwoo/Tutorial/Script/TutorialManager.cs`
+- Expected: Background / Monster / Card / UI / Effect / Minimap / Tutorial 등 프로젝트에서 정의한 렌더 순서에 맞게 표시
+- Actual: 스테이지 이펙트가 의도한 UI보다 앞쪽에 렌더링되어 UI와 연출의 표시 순서가 깨짐
+- Analysis: Commit Diff에서 `CandleFire.prefab`의 ParticleSystemRenderer Sorting Layer와 Stage Canvas의 Sorting Layer가 수정되었고, `Minimap`, `Tutorial` Sorting Layer가 추가됨
+- Cause: 일부 Particle / Canvas가 서로 다른 Sorting Layer 또는 Default Layer를 사용하여 화면 표시 우선순위가 일관되지 않았던 것으로 확인
+- Fix: Effect / Minimap / Tutorial / Option 영역의 Sorting Layer와 Sorting Order를 다시 정리하고, Tutorial Focus UI도 전용 Sorting Layer를 사용하도록 수정
+- Retest: 수정 후 Stage에서 Effect / UI / Tutorial이 동시에 표시되는 상황의 렌더 순서 확인 필요
+
+관련 기록:
+- [HEXIT Commit `808351f` — 스테이지 이펙트 앞으로나오는 버그](https://github.com/YounghoHa/Hexit/commit/808351f8f1598be9c7b2a4ad8cb59fbd28dc83b4)
+
+---
+
+## BUG-CARD-01 — 카드 Drag 시작 시 순간이동
+
+- Priority: High
+- Status: FAIL → 수정 반영
+- HEXIT Commit: `b56c4fb` (2026-04-11)
+- Commit Message: `카드 사라지는 이펙트 수정중 / 카드 애니메이션 드래그 순간이동 수정 / 내턴 상대턴 카드 숨기기`
+- Main Location:
+  - `Assets/GData/PreFabs/GameCard.prefab`
+  - `CardTweenUI` 컴포넌트 직렬화 참조
+- Expected: 마우스로 카드를 Drag하기 시작하면 현재 카드 위치에서 자연스럽게 Pointer를 따라 이동
+- Actual: Drag를 시작하는 순간 카드가 현재 위치에서 다른 위치로 순간적으로 이동한 뒤 Drag가 이어짐
+- Analysis: 수정 Commit에서 `GameCard.prefab`의 `m_cardTweenUI` 참조가 연결되고, `CardTweenUI`의 `m_rectT`, `m_canvasGroup` 직렬화 참조가 기존 Null 상태에서 실제 카드 RectTransform / CanvasGroup으로 연결됨
+- Cause: Git Diff 기준으로 Drag Animation에서 사용하는 UI 참조가 Prefab에 정상 연결되지 않은 상태가 문제와 관련된 것으로 확인. Commit만으로 런타임 계산식까지는 확정하지 않음
+- Fix: `GameCard.prefab`의 CardTweenUI 관련 참조를 정상 연결하고 Drag / Return Animation에 필요한 값을 추가 설정
+- Retest: 수정 후 카드 Drag 시작 위치, Pointer 추적, 원위치 복귀 Animation 확인
+
+관련 기록:
+- [HEXIT Commit `b56c4fb` — 카드 애니메이션 드래그 순간이동 수정](https://github.com/YounghoHa/Hexit/commit/b56c4fb5453885c390162d8c959fdb6c5a62827f)
+
