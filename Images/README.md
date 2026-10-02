@@ -18,5 +18,5 @@ Images/
 - 몬스터 사망 이후 디버프 데미지 들어오는 버그 (GameSet)에서 몬스터 사망 이후 디버프 클리어 
 <img width="671" height="373" alt="image" src="https://github.com/user-attachments/assets/b04a8026-c6fc-44d2-932f-233085b60b78" />
 -스테이지 이펙트 Sorting 오류
-<img width="636" height="394" alt="스크린샷 2026-10-02 174455" src="https://github.com/user-attachments/assets/d1993890-7bcc-48e6-99df-97e7772c28ed" />
+<img width="635" height="384" alt="image" src="https://github.com/user-attachments/assets/27a6cf0a-059d-412e-9713-d53534e1730b" />
 - 맵이동 씬 변경 및 UI/UX변경 
