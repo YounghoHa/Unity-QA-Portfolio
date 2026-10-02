@@ -37,10 +37,10 @@
 ## BUG-UI-01 — 해상도 변경 시 UI 레이아웃 깨짐
 
 - Priority: Medium
-- Status: FAIL → PASS
-- Condition: 게임 해상도 변경
-- Expected: UI 위치와 크기 유지
-- Actual: 일부 UI 위치가 깨짐
+- Status: FAIL
+- Condition: 게임 해상도 변경 (FAIL)
+- Expected: UI 위치와 크기 유지 (PASS)
+- Actual: 일부 UI 위치가 깨짐 (PASS)
 - Action: 해상도 조건에 맞게 UI 수정 후 재확인
 
 관련 기록:
