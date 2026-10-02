@@ -91,19 +91,16 @@
 ## BUG-CARD-01 — 카드 Drag 시작 시 순간이동
 
 - Priority: High
-- Status: FAIL → 수정 반영
-- HEXIT Commit: `b56c4fb` (2026-04-11)
-- Commit Message: `카드 사라지는 이펙트 수정중 / 카드 애니메이션 드래그 순간이동 수정 / 내턴 상대턴 카드 숨기기`
-- Main Location:
-  - `Assets/GData/PreFabs/GameCard.prefab`
-  - `CardTweenUI` 컴포넌트 직렬화 참조
-- Expected: 마우스로 카드를 Drag하기 시작하면 현재 카드 위치에서 자연스럽게 Pointer를 따라 이동
-- Actual: Drag를 시작하는 순간 카드가 현재 위치에서 다른 위치로 순간적으로 이동한 뒤 Drag가 이어짐
-- Analysis: 수정 Commit에서 `GameCard.prefab`의 `m_cardTweenUI` 참조가 연결되고, `CardTweenUI`의 `m_rectT`, `m_canvasGroup` 직렬화 참조가 기존 Null 상태에서 실제 카드 RectTransform / CanvasGroup으로 연결됨
-- Cause: Git Diff 기준으로 Drag Animation에서 사용하는 UI 참조가 Prefab에 정상 연결되지 않은 상태가 문제와 관련된 것으로 확인. Commit만으로 런타임 계산식까지는 확정하지 않음
-- Fix: `GameCard.prefab`의 CardTweenUI 관련 참조를 정상 연결하고 Drag / Return Animation에 필요한 값을 추가 설정
-- Retest: 수정 후 카드 Drag 시작 위치, Pointer 추적, 원위치 복귀 Animation 확인
+- Status: FAIL → PASS
+- Condition: 손패의 카드를 마우스로 Drag 시작
+- Expected: 카드를 잡은 현재 위치에서 자연스럽게 Pointer를 따라 이동
+- Actual: Drag 시작 순간 카드가 다른 위치로 순간이동한 뒤 Drag가 이어짐
+- Cause: Drag Animation에 사용하는 CardTweenUI / RectTransform / CanvasGroup 참조가 정상 연결되지 않은 상태가 문제와 관련된 것으로 확인
+- Fix: GameCard Prefab의 CardTweenUI 관련 참조와 Drag / Return Animation 설정을 정리
+- Retest: 동일 카드에서 Drag 시작 위치, Pointer 추적, 원위치 복귀를 재검증하여 순간이동 현상이 사라진 것을 확인
+
+상세: [Card Drag Jump Bug](../QA-Cases/Card-Drag-Jump-Bug.md)
 
 관련 기록:
-- `b56c4fb` — 카드 애니메이션 드래그 순간이동 수정
+- 2026-04-11 `b56c4fb` — 카드 애니메이션 드래그 순간이동 수정
 
