@@ -74,22 +74,17 @@
 
 - Priority: Medium
 - Status: FAIL → 수정 반영
-- HEXIT Commit: `808351f` (2026-07-20)
-- Commit Message: `스테이지 이펙트 앞으로나오는 버그`
-- Main Location:
-  - `Assets/GData/PreFabs/Effect/CandleFire.prefab`
-  - `Assets/Scenes/Stage.unity`
-  - `ProjectSettings/TagManager.asset`
-  - 관련 정렬 처리: `Assets/Scripts/UI/OptionSystemUI.cs`, `Assets/Scripts/hahyunwoo/Tutorial/Script/TutorialManager.cs`
-- Expected: Background / Monster / Card / UI / Effect / Minimap / Tutorial 등 프로젝트에서 정의한 렌더 순서에 맞게 표시
-- Actual: 스테이지 이펙트가 의도한 UI보다 앞쪽에 렌더링되어 UI와 연출의 표시 순서가 깨짐
-- Analysis: Commit Diff에서 `CandleFire.prefab`의 ParticleSystemRenderer Sorting Layer와 Stage Canvas의 Sorting Layer가 수정되었고, `Minimap`, `Tutorial` Sorting Layer가 추가됨
-- Cause: 일부 Particle / Canvas가 서로 다른 Sorting Layer 또는 Default Layer를 사용하여 화면 표시 우선순위가 일관되지 않았던 것으로 확인
-- Fix: Effect / Minimap / Tutorial / Option 영역의 Sorting Layer와 Sorting Order를 다시 정리하고, Tutorial Focus UI도 전용 Sorting Layer를 사용하도록 수정
-- Retest: 수정 후 Stage에서 Effect / UI / Tutorial이 동시에 표시되는 상황의 렌더 순서 확인 필요
+- Condition: Stage에서 Effect / UI / Tutorial 요소가 동시에 표시되는 상황
+- Expected: Background / Monster / Card / UI / Effect / Minimap / Tutorial이 프로젝트에서 정의한 렌더 순서에 맞게 표시
+- Actual: 특정 스테이지 이펙트가 의도한 UI보다 앞쪽에 렌더링되어 화면 표시 우선순위가 깨짐
+- Cause: 일부 Particle / Canvas가 서로 다른 Sorting Layer 또는 Default Layer를 사용해 렌더 우선순위가 일관되지 않음
+- Fix: Effect / Minimap / Tutorial / Option 영역의 Sorting Layer와 Sorting Order를 다시 정리
+- Retest: Stage에서 Effect / UI / Tutorial을 동시에 표시해 렌더 순서 재확인
+
+상세: [Stage Effect Sorting Bug](../QA-Cases/Stage-Effect-Sorting-Bug.md)
 
 관련 기록:
-- `808351f` — 스테이지 이펙트 앞으로나오는 버그
+- 2026-07-20 `808351f` — 스테이지 이펙트 앞으로나오는 버그
 
 ---
 
