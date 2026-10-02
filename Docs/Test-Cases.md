@@ -68,7 +68,6 @@ HEXIT 개발 과정에서 실제로 구현·수정·검증한 기능을 기준�
 | TC-60 | QA Tool | Heal Test Button | 전투 중 Button 클릭 | HP 즉시 회복 | 정상 사용 | PASS |
 | TC-61 | QA Tool | Attack Buff Button | 전투 중 Button 클릭 | 지정 Buff 적용 | 정상 사용 | PASS |
 | TC-62 | QA Tool | 동일 상태 반복 재현 | 동일 테스트 반복 | 같은 조건 빠르게 생성 | BattleTestButton 활용 | PASS |
-
 | TC-63 | Monster UI | 몬스터 패턴 UI 검증 | 몬스터 패턴별 UI 표시 | 행동 패턴에 맞는 UI 표시 | 구현 중 "이상한 오류" 발생, 미완성 기록 | FAIL |
 | TC-64 | Battle Code | GameSet 코드 충돌 검증 | 카드 조합 / 이동 / 공격 / 체력 기능 통합 | 관련 기능이 충돌 없이 실행 | 일부 코드 오류 및 코드 겹침으로 임시 주석 처리 | FAIL / 확인 필요 |
 | TC-65 | Battle Structure | 턴 / 몬스터 공격 구조 검증 | 턴 진행 중 몬스터 공격 실행 | 기존 구조에서 안정적으로 행동 처리 | 몬스터 스크립트 재구성 필요 판단 | 구조 개선 필요 |
