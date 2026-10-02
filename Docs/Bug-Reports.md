@@ -38,14 +38,17 @@
 
 - Priority: Medium
 - Status: FAIL
-- Condition: 게임 해상도 변경 (FAIL)
-- Expected: UI 위치와 크기 유지 (PASS)
-- Actual: 일부 UI 위치가 깨짐 (PASS)
-- Action: 해상도 조건에 맞게 UI 수정 후 재확인
+- Condition: 옵션에서 게임 해상도 변경
+- Expected: 해상도 변경이 정상 적용되고, 변경된 해상도에서도 UI 위치와 크기가 유지되어야 함
+- Actual: 과거 해상도 변경 시 일부 UI 위치가 깨지는 문제를 확인하여 UI 위치 / 크기를 수정했으나, 현재는 해상도 변경 자체가 적용되지 않고 1920×1080으로 고정되는 문제 확인
+- Action: UI 레이아웃 깨짐은 수정했지만 해상도 변경 기능은 아직 해결되지 않아 FAIL 유지
+- Evidence: 현재 버전에서 해상도 변경 미적용 현상 재현 영상 확보
+
+상세: [Resolution / UI Layout Bug](../QA-Cases/Resolution-UI-Bug.md)
 
 관련 기록:
-- 2026-04-18 게임씬 해상도 수정
-- 2026-04-19 해상도 조절 깨지는 문제 해결
+- 2026-04-18 `6a3d275` — 게임씬 해상도 수정
+- 2026-04-19 `0bb2102` — 옵션창, 해상도 조절 깨지는 문제 해결
 
 ---
 
