@@ -10,7 +10,7 @@ BUG-VFX-01
 
 ## Priority
 
-**Medium**
+**Low**
 
 ## Status
 
