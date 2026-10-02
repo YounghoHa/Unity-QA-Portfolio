@@ -15,4 +15,4 @@ Images/
 - `After/` : 수정 후 정상 동작 / 회귀 테스트 영상
 
 <img width="708" height="222" alt="image" src="https://github.com/user-attachments/assets/0d326a2f-2749-444f-b44f-165b616354d4" />
-
+- 몬스터 사망 이후 디버프 데미지 들어오는 버그 (GameSet)에서 몬스터 사망 이후 디버프 클리어 
